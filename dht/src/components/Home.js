@@ -1,7 +1,6 @@
 import Layout from "./Layout";
-import { Stack } from '@mui/material';
+import { Box, Stack, Typography, Card, CardActionArea, CardContent } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import CaseForm from "./CaseForm";
 
 function Home() {
   const { t } = useTranslation();
@@ -12,11 +11,17 @@ function Home() {
   }
 
   const content = (
-    <>
-        <Stack spacing={5} alignItems={"center"}>
-            <CaseForm/>
-        </Stack>
-    </>
+    <Box paddingTop={5}>
+      <Stack alignItems={"center"}>
+        <Card sx={{ backgroundColor: "rgb(245, 135, 9)", width: '80%', borderRadius: '8px', boxShadow: 3}}>
+          <CardActionArea href="/custom-case">
+            <CardContent>
+              <Typography variant="h5">{getTranslation('nav_custom-case')}</Typography>
+            </CardContent>
+          </CardActionArea>
+        </Card>
+      </Stack>
+    </Box>
   );
 
   return (

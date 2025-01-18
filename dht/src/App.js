@@ -7,13 +7,12 @@ import CssBaseline from '@mui/material/CssBaseline';
 
 import './i18n';
 
-import { FormDataProvider } from "./FormDataContext";
-
 import Home from './components/Home';
 import Imprint from './components/Imprint';
 import DataProtection from './components/DataProtection';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import CustomCase from './components/CustomCase';
 
 function App() {
   
@@ -31,12 +30,12 @@ function App() {
   });
 
   return (
-    <FormDataProvider>
     <ThemeProvider theme={theme} defaultMode="dark">
       <CssBaseline />
       <Router>
         <Routes>
           <Route path="/" element={<Home/>} />
+          <Route path="/custom-case" element={<CustomCase/>} />
           <Route path="/imprint" element={<Imprint/>} />
           <Route path="/data_protection" element={<DataProtection/>} />
           <Route path="/contact" element={<Contact/>} />
@@ -44,7 +43,6 @@ function App() {
       </Router>
       <Footer/>
     </ThemeProvider>
-    </FormDataProvider>
   );
 }
 
