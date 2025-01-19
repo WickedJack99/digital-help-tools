@@ -1,8 +1,9 @@
 import Layout from "./Layout";
 import { Box, Stack, Typography, Card, CardActionArea, CardContent } from '@mui/material';
 import { useTranslation } from 'react-i18next';
+import BackCard from './BackCard';
 
-function Home() {
+function SecurityIncidents() {
   const { t } = useTranslation();
   const language = localStorage.getItem('i18nLanguage');
 
@@ -19,26 +20,20 @@ function Home() {
         style={{ marginBottom: '10px' }}
       >
         <Card sx={{ backgroundColor: "rgb(245, 84, 9)", width: '80%', borderRadius: '8px', boxShadow: 3}}>
-          <CardActionArea href="/malfunctions">
+          <CardActionArea href="/custom-case">
             <CardContent>
-              <Typography variant="h5">{getTranslation('nav_malfunction')}</Typography>
+              <Typography variant="h5">{getTranslation('nav_custom-case')}</Typography>
             </CardContent>
           </CardActionArea>
         </Card>
-        <Card sx={{ backgroundColor: "rgb(245, 17, 9)", width: '80%', borderRadius: '8px', boxShadow: 3}}>
-          <CardActionArea href="/security-incidents">
+        <Card sx={{ backgroundColor: "rgb(245, 84, 9)", width: '80%', borderRadius: '8px', boxShadow: 3}}>
+          <CardActionArea href="/custom-case">
             <CardContent>
-              <Typography variant="h5">{getTranslation('nav_security-incident')}</Typography>
+              <Typography variant="h5">{getTranslation('nav_custom-case')}</Typography>
             </CardContent>
           </CardActionArea>
         </Card>
-        <Card sx={{ backgroundColor: "rgb(218, 196, 0)", width: '80%', borderRadius: '8px', boxShadow: 3}}>
-          <CardActionArea href="/first-aid-basics">
-            <CardContent>
-              <Typography variant="h5">{getTranslation('nav_bsi-basics')}</Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
+        <BackCard/>
       </Stack>
     </Box>
   );
@@ -48,4 +43,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default SecurityIncidents;

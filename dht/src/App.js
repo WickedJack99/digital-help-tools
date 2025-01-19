@@ -12,7 +12,10 @@ import Imprint from './components/Imprint';
 import DataProtection from './components/DataProtection';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Malfunctions from './components/Malfunctions';
 import CustomCase from './components/CustomCase';
+import SecurityIncidents from './components/SecurityIncidents';
+import DigitalFirstAidBasics from './components/DigitalFirstAidBasics';
 
 function App() {
   
@@ -35,6 +38,9 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home/>} />
+          <Route path="/malfunctions" element={<Malfunctions/>} />
+          <Route path="/security-incidents" element={<SecurityIncidents/>} />
+          <Route path="first-aid-basics" element={<DigitalFirstAidBasics/>} />
           <Route path="/custom-case" element={<CustomCase/>} />
           <Route path="/imprint" element={<Imprint/>} />
           <Route path="/data_protection" element={<DataProtection/>} />

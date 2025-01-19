@@ -91,77 +91,77 @@ function CustomCaseForm() {
   const content = (
     <Stack alignItems={"center"}>
     <Box paddingTop={5}>
-    <form>
-      <Stack
-        spacing={2}
-        direction="column"
-        alignItems="center"
-        style={{ marginBottom: '10px' }}
-      >
-        {formData.steps.map((step, index) => (
-          <Box key={index} width="100%">
-            <Typography variant="h5" color="textSecondary">
-              {getTranslation('step') + ` ${index + 1}`}
-            </Typography>
-            <TextField
-              label={getTranslation('step_form_heading')}
-              variant="outlined"
-              value={step.step}
-              onChange={(e) => handleChange(index, 'step', e.target.value)}
-              fullWidth
-              multiline
-              style={{ marginBottom: '10px', marginTop: '10px' }}
-            />
-            <TextField
-              label={getTranslation('step_form_description')}
-              variant="outlined"
-              value={step.outcome}
-              onChange={(e) => handleChange(index, 'outcome', e.target.value)}
-              fullWidth
-              multiline
-              rows={3}
-            />
-            <Card
-              sx={{
-                width: '100%',
-                borderRadius: '8px',
-                boxShadow: 3,
-                cursor: 'pointer',
-                marginTop: '10px',
-              }}
-              onClick={() => removeStep(index)}
-            >
-              <CardActionArea>
-                <CardContent>
-                  <Typography variant="h5" color="textSecondary">
-                    {getTranslation('remove_step_button')}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
-          </Box>
-        ))}
-        <Card
-          sx={{
-            width: '100%',
-            borderRadius: '8px',
-            boxShadow: 3,
-            cursor: 'pointer',
-          }}
-          onClick={addStep}
+      <form>
+        <Stack
+          spacing={2}
+          direction="column"
+          alignItems="center"
+          style={{ marginBottom: '10px' }}
         >
-          <CardActionArea>
-            <CardContent>
+          {formData.steps.map((step, index) => (
+            <Box key={index} width="100%">
               <Typography variant="h5" color="textSecondary">
-                {getTranslation('add_step_button')}
+                {getTranslation('step') + ` ${index + 1}`}
               </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-      </Stack>
-    </form>
-    <BackCard/>
-
+              <TextField
+                label={getTranslation('step_form_heading')}
+                variant="outlined"
+                value={step.step}
+                onChange={(e) => handleChange(index, 'step', e.target.value)}
+                fullWidth
+                multiline
+                style={{ marginBottom: '10px', marginTop: '10px' }}
+              />
+              <TextField
+                label={getTranslation('step_form_description')}
+                variant="outlined"
+                value={step.outcome}
+                onChange={(e) => handleChange(index, 'outcome', e.target.value)}
+                fullWidth
+                multiline
+                rows={3}
+              />
+              <Card
+                sx={{
+                  width: '100%',
+                  borderRadius: '8px',
+                  boxShadow: 3,
+                  cursor: 'pointer',
+                  marginTop: '10px',
+                }}
+                onClick={() => removeStep(index)}
+              >
+                <CardActionArea>
+                  <CardContent>
+                    <Typography variant="h5" color="textSecondary">
+                      {getTranslation('remove_step_button')}
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </Box>
+          ))}
+          <Card
+            sx={{
+              width: '100%',
+              borderRadius: '8px',
+              boxShadow: 3,
+              cursor: 'pointer',
+            }}
+            onClick={addStep}
+          >
+            <CardActionArea>
+              <CardContent>
+                <Typography variant="h5" color="textSecondary">
+                  {getTranslation('add_step_button')}
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+          <BackCard/>
+        </Stack>
+      </form>
+    
       {/* Floating PDF Download Button */}
       <Box
         sx={{

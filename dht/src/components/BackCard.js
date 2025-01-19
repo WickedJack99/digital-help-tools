@@ -15,7 +15,7 @@ function BackCard() {
         <>
           <Card
                 sx={{
-                    width: '100%',
+                    width: '80%',
                     borderRadius: '8px',
                     boxShadow: 3,
                     cursor: 'pointer',

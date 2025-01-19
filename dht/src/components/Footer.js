@@ -24,9 +24,6 @@ const Footer = () => {
       }}
     >
       <Container maxWidth="lg">
-        <Typography variant="body2" align="center" sx={{ mb: 2 }}>
-          &copy; {getTranslation('footer_copyright')}
-        </Typography>
         <Box display="flex" justifyContent="center" sx={{ mb: 2 }}>
           <Link href="/imprint" color="inherit" sx={{ mx: 2 }}>
             {getTranslation('footer_imprint')}
